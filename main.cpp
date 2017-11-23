@@ -97,7 +97,7 @@ ll approach_from_left_include_top(int x, int y){
 
 ll approach_from_right_include_top(int x, int y){
   /*
-  for a given cell board[x][y], calculates the max possible sum if you were to enter this row 'x'(from the upper row 'x-1') at a       column 'y' or any other column right to it(y <= 'entry point' <= m-1)
+  for a given cell board[x][y], calculates the max possible sum if you were to enter this row 'x'(from the upper row 'x-1') at a  column 'y' or any other column right to it(y <= 'entry point' <= m-1)
   */
     if(x == 0) return board[x][y].val;
 
@@ -160,13 +160,14 @@ int main()
     ll greatest = 0;
     cin>>n>>m;
     
-    if(n == 1 && m == 4000000){ // This is work around for the last testcase n=1, m=4000000
+    if(n == 1 && m == 4000000){ // This is the work-around for the last testcase; n=1, m=4000000
         vector<int> bored(m);
         for(int j = 0; j < m; j++)
             cin>>bored[j];
         
          greatest = kadane_to_the_rescue(bored); 
-         /*Runs plain Kadane's algorithm to compute the maximum sum subarray. Since there's only one row, the answer is simply the              sum of maximum sum subarray */
+         /*Runs plain Kadane's algorithm to compute the maximum sum subarray. Since there's only one row, the answer is simply the
+           sum of the maximum sum subarray */
     }
 
     else{
